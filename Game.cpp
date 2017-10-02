@@ -7,20 +7,24 @@
 Game::Game()
 {
 	
-	Console::setToFullScreen();
+	console = new Console();
 	
 }
 
 
 Game::~Game()
 {
+	delete[] console;
 }
 
 void Game::start()
 {
-	Console::showStartingScreen();
-	while (true) {
+	console->setToFullScreen();
+	console->showStartingScreen();
+	//while (true) {
 		
-	}
+	//}
+	
+	
 }
 

@@ -1,11 +1,20 @@
+#pragma once
 
-#include "Game.h"
 class Console	
 {
+private:
+	//int width;
+	//int height;
 public:
-	static void setToFullScreen();
-	static void setToWindowed();
-	static void showStartingScreen();
+
+	void setToFullScreen();
+	void setToWindowed();
+	void showStartingScreen();
+	void print(char* string , bool tabbed=false , bool centered=false);
+	void newLine(short lines=1);
+	void waitForKeystroke();
+	//====================FIX THAT METHOD===============//
+	//int* getCurrentWindowSize();
 	Console();
 	~Console();
 };
