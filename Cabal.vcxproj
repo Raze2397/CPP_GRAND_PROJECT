@@ -112,6 +112,8 @@
     <ClCompile Include="cabaloop\UI.cpp" />
     <ClCompile Include="cabaloop\Wizard.cpp" />
     <ClCompile Include="cabaloop\World.cpp" />
+    <ClCompile Include="Fateweaver.cpp" />
+    <ClCompile Include="QuestNPC.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cabaloop\Archer.h" />
@@ -128,6 +130,8 @@
     <ClInclude Include="cabaloop\UI.h" />
     <ClInclude Include="cabaloop\Wizard.h" />
     <ClInclude Include="cabaloop\World.h" />
+    <ClInclude Include="Fateweaver.h" />
+    <ClInclude Include="QuestNPC.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
