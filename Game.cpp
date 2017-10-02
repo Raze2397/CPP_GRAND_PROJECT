@@ -1,13 +1,14 @@
 #include "Game.h"
-#include <windows.h>
+#include "Console.h"
 
 
 
 
 Game::Game()
 {
-	setToFullScreen();
-
+	
+	Console::setToFullScreen();
+	
 }
 
 
@@ -15,12 +16,11 @@ Game::~Game()
 {
 }
 
-void Game::setToFullScreen()
+void Game::start()
 {
-	SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE, 0);
+	Console::showStartingScreen();
+	while (true) {
+		
+	}
 }
 
-void Game::setToWindowed()
-{
-	ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
-}

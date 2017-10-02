@@ -112,7 +112,7 @@
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="QuestNPC.h" />
-    <ClInclude Include="UI.h" />
+    <ClInclude Include="Console.h" />
     <ClInclude Include="Wizard.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
@@ -131,7 +131,7 @@
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="QuestNPC.cpp" />
-    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="Console.cpp" />
     <ClCompile Include="Wizard.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
