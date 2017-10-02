@@ -100,10 +100,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h" />
-    <ClInclude Include="cabaloop\Game.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Fateweaver.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="InteractableNPC.h" />
     <ClInclude Include="Knight.h" />

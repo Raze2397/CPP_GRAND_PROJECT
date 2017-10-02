@@ -1,4 +1,3 @@
-
 #include "Hero.h"
 class Knight :
 	public Hero

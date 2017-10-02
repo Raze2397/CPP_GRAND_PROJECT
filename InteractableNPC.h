@@ -6,5 +6,5 @@ class InteractableNPC :
 public:
 	InteractableNPC();
 	~InteractableNPC();
-};
+}; 
 
