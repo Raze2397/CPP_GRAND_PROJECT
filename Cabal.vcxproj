@@ -20,37 +20,29 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{A408C684-0266-4B6C-875B-4646646BC587}</ProjectGuid>
+    <ProjectGuid>{D8DD8AB4-2675-4D75-90CC-DA7B8443D65D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CabalOOP</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -73,102 +65,69 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Archer.h" />
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="EventManager.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="Hero.h" />
-    <ClInclude Include="InteractableNPC.h" />
-    <ClInclude Include="Knight.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="NonInteractableNPC.h" />
-    <ClInclude Include="NPC.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="UI.h" />
-    <ClInclude Include="Wizard.h" />
-    <ClInclude Include="World.h" />
+    <ClCompile Include="cabaloop\Archer.cpp" />
+    <ClCompile Include="cabaloop\Enemy.cpp" />
+    <ClCompile Include="cabaloop\EventManager.cpp" />
+    <ClCompile Include="cabaloop\Game.cpp" />
+    <ClCompile Include="cabaloop\Hero.cpp" />
+    <ClCompile Include="cabaloop\InteractableNPC.cpp" />
+    <ClCompile Include="cabaloop\Knight.cpp" />
+    <ClCompile Include="cabaloop\Map.cpp" />
+    <ClCompile Include="cabaloop\NonInteractableNPC.cpp" />
+    <ClCompile Include="cabaloop\NPC.cpp" />
+    <ClCompile Include="cabaloop\Player.cpp" />
+    <ClCompile Include="cabaloop\UI.cpp" />
+    <ClCompile Include="cabaloop\Wizard.cpp" />
+    <ClCompile Include="cabaloop\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Archer.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="EventManager.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Hero.cpp" />
-    <ClCompile Include="InteractableNPC.cpp" />
-    <ClCompile Include="Knight.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="NonInteractableNPC.cpp" />
-    <ClCompile Include="NPC.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="UI.cpp" />
-    <ClCompile Include="Wizard.cpp" />
-    <ClCompile Include="World.cpp" />
+    <ClInclude Include="cabaloop\Archer.h" />
+    <ClInclude Include="cabaloop\Enemy.h" />
+    <ClInclude Include="cabaloop\EventManager.h" />
+    <ClInclude Include="cabaloop\Game.h" />
+    <ClInclude Include="cabaloop\Hero.h" />
+    <ClInclude Include="cabaloop\InteractableNPC.h" />
+    <ClInclude Include="cabaloop\Knight.h" />
+    <ClInclude Include="cabaloop\Map.h" />
+    <ClInclude Include="cabaloop\NonInteractableNPC.h" />
+    <ClInclude Include="cabaloop\NPC.h" />
+    <ClInclude Include="cabaloop\Player.h" />
+    <ClInclude Include="cabaloop\UI.h" />
+    <ClInclude Include="cabaloop\Wizard.h" />
+    <ClInclude Include="cabaloop\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
