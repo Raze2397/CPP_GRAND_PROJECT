@@ -2,7 +2,7 @@
 #include "Console.h"
 
 
-
+ 
 
 Game::Game()
 {
@@ -20,11 +20,21 @@ Game::~Game()
 void Game::start()
 {
 	console->setToFullScreen();
-	console->showStartingScreen();
+	showStartingScreen();
+
 	//while (true) {
 		
 	//}
 	
 	
+}
+
+void Game::showStartingScreen()
+{
+	console->print("Cabal", true);
+	console->newLine();
+	console->print("Press any key to start!", true);
+	console->waitForKeystroke();
+
 }
 

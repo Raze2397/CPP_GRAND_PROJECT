@@ -99,6 +99,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Ability.h" />
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EventManager.h" />
@@ -110,13 +111,17 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="NonInteractableNPC.h" />
     <ClInclude Include="NPC.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Perk.h" />
     <ClInclude Include="QuestNPC.h" />
     <ClInclude Include="Console.h" />
+    <ClInclude Include="Skill.h" />
+    <ClInclude Include="Spell.h" />
     <ClInclude Include="Wizard.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EventManager.cpp" />
@@ -129,9 +134,12 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="NonInteractableNPC.cpp" />
     <ClCompile Include="NPC.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Perk.cpp" />
     <ClCompile Include="QuestNPC.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="Spell.cpp" />
     <ClCompile Include="Wizard.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 #include "Console.h"
 #include <Windows.h>
 #include <iostream>
-#include <iomanip>
+//#include <iomanip>
 
 
 /*int* Console::getCurrentWindowSize()
@@ -42,14 +42,7 @@ void Console::setToWindowed()
 	ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
 }
 
-void Console::showStartingScreen()
-{
-	print("Cabal",true);
-	newLine();
-	print("Press any key to start!",true);
-	waitForKeystroke();
 
-}
 
 
 

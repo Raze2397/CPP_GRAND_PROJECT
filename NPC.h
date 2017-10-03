@@ -1,7 +1,7 @@
 
-#include "Player.h"
+#include "Entity.h"
 class NPC :
-	public Player
+	public Entity
 {
 public:
 	NPC();

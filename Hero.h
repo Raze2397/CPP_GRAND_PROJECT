@@ -1,7 +1,7 @@
 
-#include "Player.h"
+#include "Entity.h"
 class Hero :
-	public Player
+	public Entity
 {
 public:
 	Hero();
