@@ -1,6 +1,6 @@
 #include "Game.h"
 #include "Console.h"
-
+#include "Entity.h"
 
  
 
@@ -21,11 +21,12 @@ void Game::start()
 {
 	console->setToFullScreen();
 	showStartingScreen();
-	createNewPlayer();
+	//createNewPlayer();
 	//while (true) {
 		
 	//}
-	
+	Entity ent1;
+	Entity ent2(ent1);
 	
 }
 

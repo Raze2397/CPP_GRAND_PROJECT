@@ -2,12 +2,13 @@
 #include <cstring>
 
 
-Item::Item() : name(nullptr)
+Item::Item() : name("Unknown")
 {
 }
 
-Item::Item(Item & item) : name(nullptr)
+Item::Item(Item & item) : name(NULL)
 {
+	if (&item == NULL)return;
 	setName(item.name);
 }
 

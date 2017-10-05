@@ -8,7 +8,10 @@
 Inventory::Inventory(short _size) : size(_size)
 {
 	items = new Item*[_size]();
-
+	for (short counter = 0; counter<_size; counter++) {
+		
+		items[counter] = new Item();
+	}
 }
 
 Inventory::Inventory(Inventory & inventory) : size(inventory.size)
