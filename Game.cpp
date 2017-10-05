@@ -38,3 +38,8 @@ void Game::showStartingScreen()
 
 }
 
+bool Game::createNewPlayer()
+{
+	return false;
+}
+

@@ -2,10 +2,6 @@
 
 
 
-bool Entity::initiateConversation(Entity entity)
-{
-	return false;
-}
 
 Entity::Entity()
 {
