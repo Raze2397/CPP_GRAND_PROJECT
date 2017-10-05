@@ -15,7 +15,37 @@ char * Entity::getName() const
 	return name;
 }
 
-Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) , currentHP(100) , name(nullptr) , inventoryExpansionSlots(0)
+void Entity::expandInventoryWith(short slots)
+{
+	Inventory* oldInventory;
+	oldInventory = inventory;
+	inventoryExpansionSlots += slots;
+	inventory = new Inventory(DEFAULT_INVENTORY_SIZE + inventoryExpansionSlots);
+	inventory = oldInventory;
+	delete[] oldInventory;
+}
+
+short Entity::getInventoryExpansionSlots() const
+{
+	return inventoryExpansionSlots;
+}
+
+Inventory * Entity::getInventoryAddress() const
+{
+	return inventory;
+}
+
+EquipmentSlot ** Entity::getEquippedItemsAddressArray() const
+{
+	return equippedItems;
+}
+
+Ability ** Entity::getAbilitiesAddressesArray() const
+{
+	return abilities;
+}
+
+Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) , currentHP(100) , name(nullptr) , inventoryExpansionSlots(0), attackPower(10), spellPower(10), armor(10) //, abilityCount(1) , spellCount(0)
 {
 	inventory = new Inventory(DEFAULT_INVENTORY_SIZE);
 	equippedItems = new EquipmentSlot*[DEFAULT_EQUIPMENT_SLOTS];
@@ -23,17 +53,24 @@ Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) ,
 		equippedItems[counter] = new EquipmentSlot(counter);
 		
 	}
-	abilities = nullptr;//new Ability[DEFAULT_ABILITY_COUNT];
-	spells = nullptr;//new Spell[DEFAULT_SPELL_COUNT];
+	abilities = new Ability*[DEFAULT_ABILITY_COUNT]();
+	spells = new Spell*[DEFAULT_SPELL_COUNT]();
 	setName(_name);
 }
 
-Entity::Entity(Entity & entity)
+Entity::Entity(Entity & entity) : maxEnergy(entity.maxEnergy), currentEnergy(entity.currentEnergy), maxHP(entity.maxHP), currentHP(entity.currentHP), name(nullptr), inventoryExpansionSlots(entity.inventoryExpansionSlots), attackPower(entity.attackPower), spellPower(entity.spellPower), armor(entity.armor)
 {
+	setName(entity.name);
 	inventory = new Inventory(*(entity.inventory));
 	equippedItems = new EquipmentSlot*[entity.DEFAULT_EQUIPMENT_SLOTS];
 	for (short counter = 0; counter<DEFAULT_EQUIPMENT_SLOTS; counter++) {
 		equippedItems[counter] = new EquipmentSlot(*(entity.equippedItems[counter]));
+	}
+	for (short counter = 0; counter < entity.DEFAULT_ABILITY_COUNT; counter++) {
+		abilities[counter] = new Ability(*(entity.abilities[counter]));
+	}
+	for (short counter = 0; counter < entity.DEFAULT_SPELL_COUNT; counter++) {
+		spells[counter] = new Spell(*(entity.spells[counter]));
 	}
 }
 

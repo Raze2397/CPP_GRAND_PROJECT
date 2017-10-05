@@ -21,6 +21,15 @@ Inventory::Inventory(Inventory & inventory) : size(inventory.size)
 
 }
 
+Inventory & Inventory::operator=(Inventory & inventory)
+{
+	
+	for (short counter=0;counter<inventory.size;counter++) {
+		*items[counter] = *inventory.items[counter];
+	}
+	return *this;
+}
+
 Inventory::~Inventory()
 {
 }

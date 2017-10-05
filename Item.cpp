@@ -11,6 +11,12 @@ Item::Item(Item & item) : name(nullptr)
 	setName(item.name);
 }
 
+Item & Item::operator=(Item & item)
+{
+	strcpy(name, item.name);
+	return *this;
+}
+
 
 Item::~Item()
 {

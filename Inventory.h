@@ -8,6 +8,7 @@ private:
 public:
 	Inventory(short _size);
 	Inventory(Inventory& inventory);
+	Inventory& operator=(Inventory& inventory);
 	~Inventory();
 };
 

@@ -7,29 +7,38 @@
 class Entity 
 {
 private:
-	int maxEnergy, currentEnergy;
+	short maxEnergy, currentEnergy;
 
 protected:
-	const short DEFAULT_INVENTORY_SIZE=10;
-	const short DEFAULT_ABILITY_COUNT = 20;
-	const short DEFAULT_SPELL_COUNT = 20;
-	const short DEFAULT_EQUIPMENT_SLOTS = 11;
+	
 	short inventoryExpansionSlots;
+	//short abilityCount;
+	//short spellCount;
 	Inventory* inventory;
 	EquipmentSlot** equippedItems;
-	Ability* abilities;
-	Spell* spells;
+	Ability** abilities;
+	Spell** spells;
 	char* name;
-	int maxHP, currentHP;
-	void setName(char* _name);
-	char* getName() const;
+	short maxHP, currentHP, attackPower, spellPower, armor;
+	
+	
 	
 	
 	
 public:
-	
+	const short DEFAULT_INVENTORY_SIZE = 10;
+	const short DEFAULT_ABILITY_COUNT = 20;
+	const short DEFAULT_SPELL_COUNT = 20;
+	const short DEFAULT_EQUIPMENT_SLOTS = 11;
 	Entity(char* _name="Unknown");
 	Entity(Entity& entity);
 	~Entity();
+	void setName(char* _name);
+	char* getName() const;
+	void expandInventoryWith(short slots);
+	short getInventoryExpansionSlots() const;
+	Inventory* getInventoryAddress() const;
+	EquipmentSlot** getEquippedItemsAddressArray() const;
+	Ability** getAbilitiesAddressesArray() const;
 };
 
