@@ -4,7 +4,8 @@ class Spell :
 	public Skill
 {
 public:
-	Spell();
+	Spell(char* _name, int _baseDamage);
+	Spell(Spell& spell);
 	~Spell();
 };
 

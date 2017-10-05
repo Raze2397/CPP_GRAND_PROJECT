@@ -8,6 +8,7 @@ private:
 public:
 	bool checkItemValidForSlot(Item& item);
 	EquipmentSlot(short _slotID);
+	EquipmentSlot(EquipmentSlot& equipmentSlot);
 	~EquipmentSlot();
 };
 

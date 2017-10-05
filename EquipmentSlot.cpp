@@ -12,6 +12,11 @@ EquipmentSlot::EquipmentSlot(short _slotID) : slotID(_slotID) , equippedItemAtSl
 	
 }
 
+EquipmentSlot::EquipmentSlot(EquipmentSlot & equipmentSlot) : slotID(equipmentSlot.slotID)
+{
+	equippedItemAtSlot = new Item(*(equipmentSlot.equippedItemAtSlot));
+}
+
 
 
 

@@ -4,7 +4,8 @@ class Ability :
 	public Skill
 {
 public:
-	Ability();
+	Ability(char* _name, int _baseDamage);
+	Ability(Ability& ability);
 	~Ability();
 };
 

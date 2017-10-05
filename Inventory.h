@@ -3,10 +3,11 @@
 class Inventory
 {
 private:
-	
+	short size;
 	Item** items;
 public:
-	Inventory(short size);
+	Inventory(short _size);
+	Inventory(Inventory& inventory);
 	~Inventory();
 };
 
