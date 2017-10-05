@@ -9,5 +9,6 @@ public:
 	~Game();
 	void start();
 	void showStartingScreen();
+	bool createNewPlayer();
 };
 

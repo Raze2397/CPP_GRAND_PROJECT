@@ -1,7 +1,6 @@
 
-#include "World.h"
-class Map :
-	public World
+
+class Map
 {
 public:
 	Map();

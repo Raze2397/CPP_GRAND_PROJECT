@@ -21,7 +21,7 @@ void Game::start()
 {
 	console->setToFullScreen();
 	showStartingScreen();
-
+	createNewPlayer();
 	//while (true) {
 		
 	//}
