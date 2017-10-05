@@ -2,12 +2,12 @@
 
 
 
-bool Hero::initiateConversation(NPC NPC)
+bool Hero::initiateConversation(NPC& NPC)
 {
 	return false;
 }
 
-void Hero::askAbout(Topic topic)
+void Hero::askAbout(Topic& topic)
 {
 }
 

@@ -6,9 +6,10 @@ class Hero :
 {
 private:
 protected:
+	short inventoryExpansionSlots;
 	int reputation[4];
-	virtual bool initiateConversation(NPC NPC);
-	virtual void askAbout(Topic topic);
+	virtual bool initiateConversation(NPC& NPC);
+	virtual void askAbout(Topic& topic);
 public:
 	Hero();
 	~Hero();

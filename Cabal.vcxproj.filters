@@ -132,6 +132,9 @@
     <ClInclude Include="Nightmare.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EquipmentSlot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Archer.cpp">
@@ -252,6 +255,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Nightmare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EquipmentSlot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
