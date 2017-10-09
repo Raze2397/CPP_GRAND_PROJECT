@@ -4,7 +4,7 @@ class Shield :
 	public Armor
 {
 public:
-	Shield();
+	Shield(char* _name);
 	~Shield();
 };
 

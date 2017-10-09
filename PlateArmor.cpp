@@ -2,7 +2,7 @@
 
 
 
-PlateArmor::PlateArmor()
+PlateArmor::PlateArmor(char* _name) : Armor(_name)
 {
 }
 

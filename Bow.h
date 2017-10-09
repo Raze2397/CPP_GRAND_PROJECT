@@ -4,7 +4,7 @@ class Bow :
 	public Weapon
 {
 public:
-	Bow();
+	Bow(char* _name);
 	~Bow();
 };
 

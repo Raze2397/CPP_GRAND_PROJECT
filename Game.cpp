@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "Console.h"
 #include "Entity.h"
-
+#include <iostream>
  
 
 Game::Game()
@@ -25,9 +25,9 @@ void Game::start()
 	//while (true) {
 		
 	//}
-	Entity ent1;
-	Entity ent2(ent1);
-	
+	//Entity ent1;
+	//Entity ent2(ent1);
+	//std::cout << "";
 }
 
 void Game::showStartingScreen()

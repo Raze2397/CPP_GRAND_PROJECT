@@ -4,15 +4,27 @@
 
 
 
-Skill::Skill(char * _name, int _baseDamage) : name(_name) , baseDamage(_baseDamage)
+Skill::Skill(char * _name, int _baseDamage) :  baseDamage(_baseDamage)
 {
+	name = new char[strlen(_name) + 1];
+	strcpy(name, _name);
 }
 
-Skill::Skill(Skill & skill) : baseDamage(skill.baseDamage)
+Skill::Skill(Skill & skill) 
 {
-	strcpy(name, skill.name);
+	if (&skill != NULL) {
+		baseDamage = skill.baseDamage;
+		name = new char[strlen(skill.name) + 1];
+		strcpy(name, skill.name);
+		
+	}
 }
 
 Skill::~Skill()
 {
+	delete[] name;
 }
+
+
+	
+

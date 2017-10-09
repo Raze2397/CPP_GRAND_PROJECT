@@ -8,5 +8,6 @@ public:
 	Skill(char* _name, int _baseDamage);
 	Skill(Skill& skill);
 	~Skill();
+	
 };
 

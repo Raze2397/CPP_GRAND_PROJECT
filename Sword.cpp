@@ -2,7 +2,7 @@
 
 
 
-Sword::Sword()
+Sword::Sword(char* _name) : Weapon(_name)
 {
 }
 

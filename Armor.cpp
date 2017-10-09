@@ -2,7 +2,7 @@
 
 
 
-Armor::Armor()
+Armor::Armor(char* _name) : Item(_name)
 {
 }
 

@@ -4,7 +4,7 @@ class LeatherArmor :
 	public Armor
 {
 public:
-	LeatherArmor();
+	LeatherArmor(char* _name);
 	~LeatherArmor();
 };
 

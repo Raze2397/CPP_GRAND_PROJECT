@@ -2,7 +2,7 @@
 
 
 
-Staff::Staff()
+Staff::Staff(char* _name) : Weapon(_name)
 {
 }
 

@@ -2,7 +2,7 @@
 
 
 
-Bow::Bow()
+Bow::Bow(char* _name) : Weapon(_name)
 {
 }
 

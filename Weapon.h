@@ -4,7 +4,7 @@ class Weapon :
 	public Item
 {
 public:
-	Weapon();
+	Weapon(char* _name);
 	~Weapon();
 };
 

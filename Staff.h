@@ -4,7 +4,7 @@ class Staff :
 	public Weapon
 {
 public:
-	Staff();
+	Staff(char* _name);
 	~Staff();
 };
 

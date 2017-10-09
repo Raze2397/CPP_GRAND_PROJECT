@@ -54,6 +54,9 @@ Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) ,
 		
 	}
 	abilities = new Ability*[DEFAULT_ABILITY_COUNT]();
+	
+	abilities[0] = new Ability("Basic Attack", 10);
+	
 	spells = new Spell*[DEFAULT_SPELL_COUNT]();
 	setName(_name);
 }
@@ -66,9 +69,11 @@ Entity::Entity(Entity & entity) : maxEnergy(entity.maxEnergy), currentEnergy(ent
 	for (short counter = 0; counter<DEFAULT_EQUIPMENT_SLOTS; counter++) {
 		equippedItems[counter] = new EquipmentSlot(*(entity.equippedItems[counter]));
 	}
+	abilities = new Ability*[DEFAULT_ABILITY_COUNT]();
 	for (short counter = 0; counter < entity.DEFAULT_ABILITY_COUNT; counter++) {
 		abilities[counter] = new Ability(*(entity.abilities[counter]));
 	}
+	spells = new Spell*[DEFAULT_SPELL_COUNT]();
 	for (short counter = 0; counter < entity.DEFAULT_SPELL_COUNT; counter++) {
 		spells[counter] = new Spell(*(entity.spells[counter]));
 	}

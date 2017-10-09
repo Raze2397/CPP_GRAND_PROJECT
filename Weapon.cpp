@@ -2,7 +2,7 @@
 
 
 
-Weapon::Weapon()
+Weapon::Weapon(char* _name) : Item(_name)
 {
 }
 

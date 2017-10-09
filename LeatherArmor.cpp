@@ -2,7 +2,7 @@
 
 
 
-LeatherArmor::LeatherArmor()
+LeatherArmor::LeatherArmor(char* _name) : Armor(_name)
 {
 }
 

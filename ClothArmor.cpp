@@ -2,7 +2,7 @@
 
 
 
-ClothArmor::ClothArmor()
+ClothArmor::ClothArmor(char* _name) : Armor(_name)
 {
 }
 

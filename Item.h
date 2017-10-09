@@ -4,7 +4,7 @@ class Item
 private:
 	char* name;
 public:
-	Item();
+	Item(char* _name);
 	Item(Item& item);
 	Item& operator=(Item& item);
 	~Item();

@@ -4,7 +4,7 @@ class PlateArmor :
 	public Armor
 {
 public:
-	PlateArmor();
+	PlateArmor(char* _name);
 	~PlateArmor();
 };
 

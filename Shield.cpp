@@ -2,7 +2,7 @@
 
 
 
-Shield::Shield()
+Shield::Shield(char* _name) : Armor(_name)
 {
 }
 
