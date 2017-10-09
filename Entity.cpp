@@ -45,8 +45,10 @@ Ability ** Entity::getAbilitiesAddressesArray() const
 	return abilities;
 }
 
-Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) , currentHP(100) , name(nullptr) , inventoryExpansionSlots(0), attackPower(10), spellPower(10), armor(10) //, abilityCount(1) , spellCount(0)
+Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) , currentHP(100) , inventoryExpansionSlots(0), attackPower(10), spellPower(10), armor(10) //, abilityCount(1) , spellCount(0)
 {
+	name = new char[strlen(_name) + 1];
+	strcpy(name, _name);
 	inventory = new Inventory(DEFAULT_INVENTORY_SIZE);
 	equippedItems = new EquipmentSlot*[DEFAULT_EQUIPMENT_SLOTS];
 	for (short counter=0;counter<DEFAULT_EQUIPMENT_SLOTS;counter++) {
@@ -58,12 +60,13 @@ Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) ,
 	abilities[0] = new Ability("Basic Attack", 10);
 	
 	spells = new Spell*[DEFAULT_SPELL_COUNT]();
-	setName(_name);
+	
 }
 
-Entity::Entity(Entity & entity) : maxEnergy(entity.maxEnergy), currentEnergy(entity.currentEnergy), maxHP(entity.maxHP), currentHP(entity.currentHP), name(nullptr), inventoryExpansionSlots(entity.inventoryExpansionSlots), attackPower(entity.attackPower), spellPower(entity.spellPower), armor(entity.armor)
+Entity::Entity(Entity & entity) : maxEnergy(entity.maxEnergy), currentEnergy(entity.currentEnergy), maxHP(entity.maxHP), currentHP(entity.currentHP), inventoryExpansionSlots(entity.inventoryExpansionSlots), attackPower(entity.attackPower), spellPower(entity.spellPower), armor(entity.armor)
 {
-	setName(entity.name);
+	name = new char[strlen(entity.name) + 1];
+	strcpy(name, entity.name);
 	inventory = new Inventory(*(entity.inventory));
 	equippedItems = new EquipmentSlot*[entity.DEFAULT_EQUIPMENT_SLOTS];
 	for (short counter = 0; counter<DEFAULT_EQUIPMENT_SLOTS; counter++) {

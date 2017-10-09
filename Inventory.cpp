@@ -32,4 +32,8 @@ Inventory & Inventory::operator=(Inventory & inventory)
 
 Inventory::~Inventory()
 {
+	for (short counter=0;counter<size;counter++) {
+		delete[] items[counter];
+	}
+	delete[] items;
 }
