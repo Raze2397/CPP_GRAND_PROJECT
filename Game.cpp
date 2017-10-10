@@ -25,9 +25,10 @@ void Game::start()
 	//while (true) {
 		
 	//}
-	//Entity ent1;
-	//Entity ent2(ent1);
-	//std::cout << "";
+	Entity ent1;
+	Entity ent2("Vasko");
+	ent1.useSkill(1)->castAt(ent2);
+	std::cout << "";
 }
 
 void Game::showStartingScreen()

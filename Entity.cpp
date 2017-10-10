@@ -1,6 +1,6 @@
 #include "Entity.h"
 #include <cstring>
-
+#include "BasicAttack.h"
 
 
 void Entity::setName(char * _name)
@@ -40,12 +40,74 @@ EquipmentSlot ** Entity::getEquippedItemsAddressArray() const
 	return equippedItems;
 }
 
-Ability ** Entity::getAbilitiesAddressesArray() const
+short Entity::getMaxHP() const
 {
-	return abilities;
+	return maxHP;
 }
 
-Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) , currentHP(100) , inventoryExpansionSlots(0), attackPower(10), spellPower(10), armor(10) //, abilityCount(1) , spellCount(0)
+short Entity::getCurrentHP() const
+{
+	return currentHP;
+}
+
+short Entity::getAttackPower() const
+{
+	return attackPower;
+}
+
+short Entity::getSpellPower() const
+{
+	return spellPower;
+}
+
+short Entity::getArmor() const
+{
+	return armor;
+}
+
+void Entity::setMaxHP(short _maxHP)
+{
+	maxHP = _maxHP;
+}
+
+void Entity::setCurrentHP(short _currentHP)
+{
+	currentHP = _currentHP;
+}
+
+void Entity::setAttackPower(short _attackPower)
+{
+	attackPower = _attackPower;
+}
+
+void Entity::setSpellPower(short _spellPower)
+{
+	spellPower = _spellPower;
+}
+
+void Entity::setArmor(short _armor)
+{
+	armor = _armor;
+}
+
+
+
+
+
+Skill* Entity::useSkill(short skillID)
+{
+	switch (skillID) {
+	case 1: {
+		BasicAttack* attack = new BasicAttack(*this);
+		return attack;
+		break;
+	}
+	}
+	
+	
+}
+
+Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) , currentHP(100) , inventoryExpansionSlots(0), attackPower(0), spellPower(0), armor(0)
 {
 	name = new char[strlen(_name) + 1];
 	strcpy(name, _name);
@@ -55,11 +117,9 @@ Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) ,
 		equippedItems[counter] = new EquipmentSlot(counter);
 		
 	}
-	abilities = new Ability*[DEFAULT_ABILITY_COUNT]();
-	
-	abilities[0] = new Ability("Basic Attack", 10);
-	
-	spells = new Spell*[DEFAULT_SPELL_COUNT]();
+	knownSkillsID = new short[DEFAULT_SKILL_CAP]();
+
+
 	
 }
 
@@ -72,17 +132,42 @@ Entity::Entity(Entity & entity) : maxEnergy(entity.maxEnergy), currentEnergy(ent
 	for (short counter = 0; counter<DEFAULT_EQUIPMENT_SLOTS; counter++) {
 		equippedItems[counter] = new EquipmentSlot(*(entity.equippedItems[counter]));
 	}
-	abilities = new Ability*[DEFAULT_ABILITY_COUNT]();
-	for (short counter = 0; counter < entity.DEFAULT_ABILITY_COUNT; counter++) {
-		abilities[counter] = new Ability(*(entity.abilities[counter]));
+	knownSkillsID = new short[DEFAULT_SKILL_CAP]();
+	for (short counter = 0; counter<DEFAULT_SKILL_CAP; counter++) {
+		knownSkillsID[counter] = entity.knownSkillsID[counter];
 	}
-	spells = new Spell*[DEFAULT_SPELL_COUNT]();
-	for (short counter = 0; counter < entity.DEFAULT_SPELL_COUNT; counter++) {
-		spells[counter] = new Spell(*(entity.spells[counter]));
+	
+}
+
+Entity & Entity::operator=(Entity & entity)
+{
+	this->~Entity();
+	name = new char[strlen(entity.name) + 1];
+	strcpy(name, entity.name);
+	inventory = new Inventory(*(entity.inventory));
+	
+	equippedItems = new EquipmentSlot*[entity.DEFAULT_EQUIPMENT_SLOTS];
+	for (short counter = 0; counter<DEFAULT_EQUIPMENT_SLOTS; counter++) {
+		equippedItems[counter] = new EquipmentSlot(*(entity.equippedItems[counter]));
 	}
+	knownSkillsID = new short[DEFAULT_SKILL_CAP]();
+	for (short counter = 0; counter<DEFAULT_SKILL_CAP; counter++) {
+		knownSkillsID[counter] = entity.knownSkillsID[counter];
+	}
+	
+	
+	return *this;
 }
 
 
 Entity::~Entity()
 {
+	delete[] name;
+	inventory->~Inventory();
+	for (short counter = 0; counter<DEFAULT_EQUIPMENT_SLOTS; counter++) {
+		equippedItems[counter]->~EquipmentSlot();
+	}
+	delete[] equippedItems;
+	delete[] knownSkillsID;
+	
 }

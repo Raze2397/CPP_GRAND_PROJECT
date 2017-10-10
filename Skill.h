@@ -1,13 +1,16 @@
 #pragma once
+class Entity;
 class Skill
 {
 protected:
-	char* name;
-	int baseDamage;
+	short baseDamage;
+	short damageOutput;
+	
 public:
-	Skill(char* _name, int _baseDamage);
-	Skill(Skill& skill);
+	//Skill(int _baseDamage);
+	//Skill(Skill& skill);
 	~Skill();
+	virtual bool castAt(Entity & target)=0;
 	
 };
 

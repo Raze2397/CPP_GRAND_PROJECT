@@ -102,6 +102,7 @@
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Armor.h" />
+    <ClInclude Include="BasicAttack.h" />
     <ClInclude Include="Bow.h" />
     <ClInclude Include="City.h" />
     <ClInclude Include="ClothArmor.h" />
@@ -144,6 +145,7 @@
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="BasicAttack.cpp" />
     <ClCompile Include="Bow.cpp" />
     <ClCompile Include="City.cpp" />
     <ClCompile Include="ClothArmor.cpp" />

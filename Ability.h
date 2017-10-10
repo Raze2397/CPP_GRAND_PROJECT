@@ -3,9 +3,12 @@
 class Ability :
 	public Skill
 {
+protected:
+	bool castAt(Entity & target) override =0;
 public:
-	Ability(char* _name, int _baseDamage);
-	Ability(Ability& ability);
+	//Ability();
+	//Ability(Ability& ability);
 	~Ability();
+
 };
 
