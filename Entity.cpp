@@ -138,6 +138,7 @@ Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) ,
 	}
 	knownSkillsID = new short[DEFAULT_SKILL_CAP]();
 	knownSkillsID[0] = 1;
+	//!!!!!!!!!!!!!!!!!!!!!!INITIALIZE COORDINATES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 	

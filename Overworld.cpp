@@ -2,6 +2,10 @@
 
 
 
+void Overworld::initializeSettlements()
+{
+}
+
 Overworld::Overworld()
 {
 }

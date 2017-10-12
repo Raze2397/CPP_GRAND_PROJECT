@@ -3,6 +3,8 @@
 class Underworld :
 	public World
 {
+protected:
+	void initializeSettlements() override;
 public:
 	Underworld();
 	~Underworld();

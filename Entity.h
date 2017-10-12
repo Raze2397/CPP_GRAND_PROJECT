@@ -19,6 +19,7 @@ protected:
 	short maxHP, currentHP, attackPower, spellPower, armor;
 	short* knownSkillsID;
 	Skill* useSkill(short skillID);
+	short xCoordinate, yCoordinate;
 	
 	
 	

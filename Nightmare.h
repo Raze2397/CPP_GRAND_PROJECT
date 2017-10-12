@@ -3,6 +3,8 @@
 class Nightmare :
 	public World
 {
+protected:
+	void initializeSettlements() override;
 public:
 	Nightmare();
 	~Nightmare();

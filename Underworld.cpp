@@ -2,6 +2,10 @@
 
 
 
+void Underworld::initializeSettlements()
+{
+}
+
 Underworld::Underworld()
 {
 }

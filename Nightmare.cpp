@@ -2,6 +2,10 @@
 
 
 
+void Nightmare::initializeSettlements()
+{
+}
+
 Nightmare::Nightmare()
 {
 }
