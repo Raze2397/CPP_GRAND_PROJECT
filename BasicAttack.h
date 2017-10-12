@@ -8,6 +8,7 @@ private:
 	bool castAt(Entity & target) override;
 	
 public:
+	
 	BasicAttack(Entity& caster);
 	~BasicAttack();
 };

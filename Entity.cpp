@@ -1,5 +1,10 @@
-#include "Entity.h"
 #include <cstring>
+#include "Entity.h"
+//#include "Topic.h"
+#include "Inventory.h"
+//#include "Ability.h"
+//#include "Spell.h"
+#include "EquipmentSlot.h"
 #include "BasicAttack.h"
 
 
@@ -90,6 +95,19 @@ void Entity::setArmor(short _armor)
 	armor = _armor;
 }
 
+bool Entity::attemptSkillUsage(short skillID,Entity& target)
+{
+	
+	for (short counter = 0; counter < DEFAULT_SKILL_CAP; counter++) {
+		if (skillID == knownSkillsID[counter]) {
+			//implement valid target check
+			useSkill(skillID)->castAt(target);
+			return true;
+		}
+	}
+	return false;
+}
+
 
 
 
@@ -102,6 +120,7 @@ Skill* Entity::useSkill(short skillID)
 		return attack;
 		break;
 	}
+	
 	}
 	
 	
@@ -118,6 +137,7 @@ Entity::Entity(char* _name) : maxEnergy(100) , currentEnergy(100) , maxHP(100) ,
 		
 	}
 	knownSkillsID = new short[DEFAULT_SKILL_CAP]();
+	knownSkillsID[0] = 1;
 
 
 	

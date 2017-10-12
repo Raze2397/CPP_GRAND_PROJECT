@@ -1,5 +1,6 @@
-#include "Map.h"
-#include "Settlement.h"
+#pragma once
+class Map;
+class Settlement;
 class World 	
 {
 protected:

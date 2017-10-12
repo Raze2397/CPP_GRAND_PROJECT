@@ -1,14 +1,19 @@
+#include <iostream>
 #include "Game.h"
 #include "Console.h"
 #include "Entity.h"
-#include <iostream>
- 
+#include "World.h"
+#include "Overworld.h"
+#include "Underworld.h"
+#include "Nightmare.h"
 
 Game::Game()
 {
 	
 	console = new Console();
 	
+	
+
 }
 
 
@@ -20,28 +25,46 @@ Game::~Game()
 void Game::start()
 {
 	console->setToFullScreen();
-	showStartingScreen();
+	console->showStartingScreen();
+
 	//createNewPlayer();
 	//while (true) {
-		
+
 	//}
-	Entity ent1;
-	Entity ent2("Vasko");
-	ent1.useSkill(1)->castAt(ent2);
-	std::cout << "";
+	//Entity ent1;
+	//Entity ent2("Vasko");
+	//ent1.attemptSkillUsage(1, ent2);
+	//std::cout << "";
+	player = createNewPlayer();
+	world = createNewWorld();
 }
 
-void Game::showStartingScreen()
+Entity * Game::createNewPlayer()
 {
-	console->print("Cabal", true);
-	console->newLine();
-	console->print("Press any key to start!", true);
-	console->waitForKeystroke();
-
+	Entity* createdPlayer = new Entity(console->characterCreationName());
+	return createdPlayer;
 }
 
-bool Game::createNewPlayer()
+World * Game::createNewWorld(short type)
 {
-	return false;
+	switch (type) {
+	case 1: {
+		World* overworld = new Overworld();
+		return overworld;
+	}
+	case 2: {
+		World* underworld = new Underworld();
+		return underworld;
+	}
+	case 3: {
+		World* nightmare = new Nightmare();
+		return nightmare;
+	}
+	}
+	
 }
+
+
+
+
 

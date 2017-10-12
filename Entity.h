@@ -1,9 +1,9 @@
 #pragma once
-#include "Topic.h"
-#include "Inventory.h"
-#include "Ability.h"
-#include "Spell.h"
-#include "EquipmentSlot.h"
+
+//class Topic;
+class Inventory;
+class Skill;
+class EquipmentSlot;
 class Entity 
 {
 private:
@@ -18,6 +18,7 @@ protected:
 	char* name;
 	short maxHP, currentHP, attackPower, spellPower, armor;
 	short* knownSkillsID;
+	Skill* useSkill(short skillID);
 	
 	
 	
@@ -46,6 +47,7 @@ public:
 	void setAttackPower(short _attackPower);
 	void setSpellPower(short _spellPower);
 	void setArmor(short _armor);
-	Skill* useSkill(short skillID);
+	bool attemptSkillUsage(short skillID, Entity& target);
+
 };
 

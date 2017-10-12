@@ -71,4 +71,38 @@ void Console::waitForKeystroke()
 	std::cin.get();
 }
 
+bool Console::checkNameForValidity(char * name)
+{
+	bool allOK = true;
+	for (short counter = 0; counter < 16; counter++) {
+		if ((name[counter] < 0) || (name[counter] > 0 && name[counter] < 65) || (name[counter] > 90 && name[counter] < 97) || (name[counter] > 122)) {
+			allOK = false;
+		}
+	}
+	if (name[16] != '\0')allOK = false;
+	if (name[0] == '\0')allOK = false;
+	if (allOK == false) {
+		print("Your name contains invalid characters or is shorter than 1 letter or longer than 16 letters, please try again!");
+		return false; 
+	}
+	else return true;
+}
 
+char* Console::characterCreationName()
+{
+	char* name = new char[100]();
+	print("Choose your character's name: ");
+	do {
+		std::cin.getline(name, 100);
+	} while (!checkNameForValidity(name));
+	return name;
+}
+
+void Console::showStartingScreen()
+{
+	print("Cabal", true);
+	newLine();
+	print("Press any key to start!", true);
+	waitForKeystroke();
+
+}

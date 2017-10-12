@@ -1,6 +1,7 @@
 #pragma once
-#include "InteractableNPC.h"
 #include "Entity.h"
+class NPC;
+class Topic;
 class Hero :
 	public Entity
 {
