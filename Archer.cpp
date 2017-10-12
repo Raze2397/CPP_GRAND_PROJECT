@@ -2,7 +2,7 @@
 
 
 
-Archer::Archer()
+Archer::Archer(char* _name) : Hero(_name)
 {
 }
 

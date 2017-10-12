@@ -2,7 +2,7 @@
 
 
 
-Wizard::Wizard()
+Wizard::Wizard(char* _name) : Hero(_name)
 {
 }
 

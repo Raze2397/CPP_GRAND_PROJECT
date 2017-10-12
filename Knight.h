@@ -3,6 +3,7 @@ class Knight :
 	public Hero
 {
 public:
-	Knight();
+	
+	Knight(char * _name);
 	~Knight();
 };

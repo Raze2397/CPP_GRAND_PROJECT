@@ -4,6 +4,7 @@ class Archer :
 	public Hero
 {
 public:
-	Archer();
+	
+	Archer(char * _name);
 	~Archer();
 };

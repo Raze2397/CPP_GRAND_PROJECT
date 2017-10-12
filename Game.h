@@ -1,7 +1,7 @@
 #pragma once
 #include <cstring>
 class Console;
-class Entity;
+class Player;
 class World;
 
 
@@ -9,14 +9,15 @@ class Game
 {
 private:
 	Console* console;
-	Entity* player;
+	Player* player;
 	World* world;
 public:
 	Game();
 	~Game();
 	void start();
 	
-	Entity* createNewPlayer();
+	Player* createNewPlayer();
 	World* createNewWorld(short type=1);
+	
 };
 

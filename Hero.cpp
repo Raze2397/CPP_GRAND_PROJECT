@@ -11,8 +11,9 @@ void Hero::askAbout(Topic& topic)
 {
 }
 
-Hero::Hero()
+Hero::Hero(char* _name) : Player(_name)
 {
+
 }
 
 

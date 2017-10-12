@@ -2,7 +2,7 @@
 
 
 
-Knight::Knight()
+Knight::Knight(char* _name) : Hero(_name)
 {
 }
 

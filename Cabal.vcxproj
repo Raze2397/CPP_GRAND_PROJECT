@@ -125,6 +125,7 @@
     <ClInclude Include="Overworld.h" />
     <ClInclude Include="Perk.h" />
     <ClInclude Include="PlateArmor.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="QuestNPC.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Settlement.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Overworld.cpp" />
     <ClCompile Include="Perk.cpp" />
     <ClCompile Include="PlateArmor.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="QuestNPC.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Settlement.cpp" />

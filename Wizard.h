@@ -4,6 +4,7 @@ class Wizard :
 	public Hero
 {
 public:
-	Wizard();
+	
+	Wizard(char * _name);
 	~Wizard();
 };

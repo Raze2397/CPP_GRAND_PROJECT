@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Game.h"
 #include "Console.h"
-#include "Entity.h"
+#include "Player.h"
 #include "World.h"
 #include "Overworld.h"
 #include "Underworld.h"
@@ -39,9 +39,9 @@ void Game::start()
 	world = createNewWorld();
 }
 
-Entity * Game::createNewPlayer()
+Player * Game::createNewPlayer()
 {
-	Entity* createdPlayer = new Entity(console->characterCreationName());
+	Player* createdPlayer = new Player(console->characterCreationName());
 	return createdPlayer;
 }
 
