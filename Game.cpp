@@ -51,10 +51,19 @@ int * Game::randomCoordinatesGenerator()
 	return coordinates;
 }
 
-char * Game::randomVillageNameGenerator()
+char * Game::randomSettlementNameGenerator()
 {
-	//HERE
-	return nullptr;
+	//to fix
+	srand(time(NULL));
+	int nameLength = rand() % 4 + 4;
+	char* name = new char[nameLength + 1];
+	char* letter = new char[1];
+	for (short counter = 0; counter < nameLength; counter++) {
+		letter[0] = (char)(rand() % 26 + 97);
+		name[counter] = letter[0];
+	}
+	
+	return name;
 }
 
 Player * Game::createNewPlayer()

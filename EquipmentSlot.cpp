@@ -1,5 +1,5 @@
 #include "EquipmentSlot.h"
-
+#include "Item.h"
 
 
 bool EquipmentSlot::checkItemValidForSlot(Item & item)

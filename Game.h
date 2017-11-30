@@ -15,8 +15,8 @@ public:
 	Game();
 	~Game();
 	void start();
-	int* randomCoordinatesGenerator();
-	char* randomVillageNameGenerator();
+	static int* randomCoordinatesGenerator();
+	static char* randomSettlementNameGenerator();
 	Player* createNewPlayer();
 	World* createNewWorld(short type=1);
 	
