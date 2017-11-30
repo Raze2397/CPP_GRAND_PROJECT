@@ -4,7 +4,7 @@ class Town :
 	public Settlement
 {
 public:
-	Town();
+	Town(char* _name);
 	~Town();
 };
 

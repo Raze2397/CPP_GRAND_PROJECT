@@ -137,6 +137,7 @@
     <ClInclude Include="Spell.h" />
     <ClInclude Include="Town.h" />
     <ClInclude Include="Underworld.h" />
+    <ClInclude Include="Vendor.h" />
     <ClInclude Include="Village.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="Wizard.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="Spell.cpp" />
     <ClCompile Include="Town.cpp" />
     <ClCompile Include="Underworld.cpp" />
+    <ClCompile Include="Vendor.cpp" />
     <ClCompile Include="Village.cpp" />
     <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="Wizard.cpp" />

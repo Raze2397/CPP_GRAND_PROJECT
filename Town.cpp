@@ -2,7 +2,7 @@
 
 
 
-Town::Town()
+Town::Town(char* _name) : Settlement(_name)
 {
 }
 

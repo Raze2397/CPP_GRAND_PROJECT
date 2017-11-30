@@ -2,7 +2,7 @@
 
 
 
-Village::Village()
+Village::Village(char* _name) : Settlement(_name)
 {
 }
 

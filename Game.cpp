@@ -6,6 +6,7 @@
 #include "Overworld.h"
 #include "Underworld.h"
 #include "Nightmare.h"
+#include <ctime>
 
 Game::Game()
 {
@@ -37,6 +38,23 @@ void Game::start()
 	//std::cout << "";
 	player = createNewPlayer();
 	world = createNewWorld();
+}
+
+int * Game::randomCoordinatesGenerator()
+{
+	srand(time(NULL));
+	int xCoordinate = rand() % 100;
+	int yCoordinate = rand() % 100;
+	int coordinates[2];
+	coordinates[0] = xCoordinate;
+	coordinates[1] = yCoordinate;
+	return coordinates;
+}
+
+char * Game::randomVillageNameGenerator()
+{
+	//HERE
+	return nullptr;
 }
 
 Player * Game::createNewPlayer()
